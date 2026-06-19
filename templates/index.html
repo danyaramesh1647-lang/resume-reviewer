@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Reviewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Resume Reviewer</h1>
+            <p>Paste your resume and get instant AI-powered feedback</p>
+        </div>
+
+        <div class="main">
+            <div class="input-section">
+                <form method="POST">
+                    <div class="form-group">
+                        <label>📄 Your Resume</label>
+                        <textarea name="resume" rows="15" placeholder="Paste your resume text here..." required>{{ resume_text }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>💼 Job Description (Optional)</label>
+                        <textarea name="job_description" rows="6" placeholder="Paste the job description to get tailored feedback...">{{ job_description }}</textarea>
+                    </div>
+                    <button type="submit">🔍 Analyze Resume</button>
+                </form>
+            </div>
+
+            <div class="output-section">
+                {% if error %}
+                <div class="error">{{ error }}</div>
+                {% endif %}
+
+                {% if feedback %}
+                <div class="feedback-box">
+                    <h2>📊 AI Feedback</h2>
+                    <div class="feedback-content">
+                        {{ feedback | safe }}
+                    </div>
+                </div>
+                {% else %}
+                <div class="placeholder">
+                    <div class="placeholder-icon">🎯</div>
+                    <h3>Your feedback will appear here</h3>
+                    <p>Paste your resume on the left and click Analyze!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
