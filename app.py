@@ -1,10 +1,11 @@
+import os
 from flask import Flask, render_template, request
 from google import genai
 import markdown
 
 app = Flask(__name__)
 
-client = genai.Client(api_key="AQ.Ab8RN6JAWQYQK1CPJwS3PwDzatBM5JHazRsF2DLDtymweyV--A")
+client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
 @app.route("/", methods=["GET", "POST"])
 def index():
