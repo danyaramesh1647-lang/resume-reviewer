@@ -4,6 +4,8 @@ An AI-powered resume reviewer built with Flask and the Google Gemini API. Paste 
 
 **🔗 Live Demo:** [resume-reviewer-gs55.onrender.com](https://resume-reviewer-gs55.onrender.com)
 
+![AI Resume Reviewer Screenshot](./IMG_20260811_175613.jpg)
+
 ## Features
 - Paste your resume text and get instant AI-generated feedback
 - Overall score out of 10
